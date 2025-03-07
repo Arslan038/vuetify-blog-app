@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import PostCard from './PostCard.vue';
 import PostForm from './PostForm.vue';
 import { usePostStore } from '@/stores/post';
@@ -38,10 +38,6 @@ const store = usePostStore();
 const { isLoading, posts } = storeToRefs(store);
 
 const postDialog = ref(false);
-
-onMounted(() => {
-    store.fetchPosts();
-})
 
 const actions = {
     toggleDialog() {
